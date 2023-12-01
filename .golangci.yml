@@ -1,0 +1,96 @@
+---
+linters:
+  enable-all: true
+  disable:
+    - cyclop
+    - depguard
+    - funlen
+    - gci
+    - gochecknoinits
+    - gocyclo
+    - godox
+    - gofumpt
+    - golint
+    - ireturn
+    - lll
+    - nlreturn
+    - revive
+    - unparam
+    - wsl
+    # deprecated
+    - deadcode
+    - exhaustivestruct
+    - ifshort
+    - interfacer
+    - maligned
+    - nosnakecase
+    - scopelint
+    - structcheck
+    - varcheck
+
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  forbidigo:
+    forbid:
+      - Regex of a go code to stop
+  gocyclo:
+    min-complexity: 15
+  gosimple:
+    checks: ["all", "-S1038"]
+  govet:
+    check-shadowing: true
+  nolintlint:
+    allow-unused: false
+    allow-no-explanation: []
+    require-explanation: true
+    require-specific: true
+  stylecheck:
+    go: "1.21"
+    checks:
+      - all
+    dot-import-whitelist:
+      - fmt
+    initialisms:
+      [
+        "ACL",
+        "API",
+        "ASCII",
+        "CPU",
+        "CSS",
+        "DNS",
+        "EOF",
+        "GUID",
+        "HTML",
+        "HTTP",
+        "HTTPS",
+        "ID",
+        "IP",
+        "JSON",
+        "QPS",
+        "RAM",
+        "RPC",
+        "SLA",
+        "SMTP",
+        "SQL",
+        "SSH",
+        "TCP",
+        "TLS",
+        "TTL",
+        "UDP",
+        "UI",
+        "GID",
+        "UID",
+        "UUID",
+        "URI",
+        "URL",
+        "UTF8",
+        "VM",
+        "XML",
+        "XMPP",
+        "XSRF",
+        "XSS",
+      ]
+    http-status-code-whitelist: ["200", "400", "404", "500"]
