@@ -23,6 +23,22 @@ func Day2(input string) []int {
 	return result
 }
 
+// Calculate the power of each game.
+// Power is defined as the counts of the minimal set of cubes to play a game,
+// multiplied together.
+func Day2b(input string) []int {
+	lines := strings.Split(input, "\n")
+
+	result := []int{}
+
+	for _, line := range lines {
+		game := parseBagGame(line)
+		result = append(result, game.power())
+	}
+
+	return result
+}
+
 type BagRound struct {
 	red   int
 	green int
@@ -85,6 +101,26 @@ func (g BagGame) possible() bool {
 	}
 
 	return true
+}
+
+// Power is defined as the counts of the minimal set of cubes to play a game,
+// multiplied together.
+func (g BagGame) power() int {
+	minimalRound := BagRound{red: 0, green: 0, blue: 0}
+
+	for _, round := range g.rounds {
+		if round.red > minimalRound.red {
+			minimalRound.red = round.red
+		}
+		if round.green > minimalRound.green {
+			minimalRound.green = round.green
+		}
+		if round.blue > minimalRound.blue {
+			minimalRound.blue = round.blue
+		}
+	}
+
+	return minimalRound.red * minimalRound.green * minimalRound.blue
 }
 
 // Parse something that looks like:
