@@ -56,7 +56,7 @@ func digitAtIndexInString(input string, index int, includeWords bool) (int, erro
 
 	char := rune(input[index])
 
-	if strings.ContainsRune("0123456789", char) {
+	if isDigit(char) {
 		return int(char) - int('0'), nil
 	}
 	if includeWords {
