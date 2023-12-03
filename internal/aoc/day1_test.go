@@ -21,10 +21,7 @@ func TestDay1(t *testing.T) {
 
 	input = readFile(t, "input/day1.txt")
 	values = aoc.Day1(input, false)
-	total := 0
-	for _, value := range values {
-		total += value
-	}
+	total := sumArray(values)
 	assert.Equal(t, 54697, total)
 }
 func TestDay1b(t *testing.T) {
@@ -43,9 +40,6 @@ func TestDay1b(t *testing.T) {
 
 	input = readFile(t, "input/day1.txt")
 	values = aoc.Day1(input, true)
-	total := 0
-	for _, value := range values {
-		total += value
-	}
+	total := sumArray(values)
 	assert.Equal(t, 54885, total)
 }

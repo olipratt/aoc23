@@ -35,3 +35,11 @@ func readFile(t *testing.T, filename string) string {
 	// Trim any surrounding whitespace before returning.
 	return strings.TrimSpace(string(buf))
 }
+
+func sumArray(a []int) int {
+	total := 0
+	for _, value := range a {
+		total += value
+	}
+	return total
+}
