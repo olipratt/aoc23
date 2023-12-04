@@ -27,3 +27,11 @@ func (p Point) Add(q Point) Point {
 func (p Point) Sub(q Point) Point {
 	return Point{p.x - q.x, p.y - q.y}
 }
+
+func SumArray(a []int) int {
+	total := 0
+	for _, value := range a {
+		total += value
+	}
+	return total
+}
