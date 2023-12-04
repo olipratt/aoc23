@@ -6,6 +6,15 @@ func isDigit(char rune) bool {
 	return strings.ContainsRune("0123456789", char)
 }
 
+// Calculate the power of an integer to some other integer.
+func intPow(num int, power uint) int {
+	result := 1
+	for i := 0; i < int(power); i++ {
+		result *= num
+	}
+	return result
+}
+
 type Point struct {
 	x int
 	y int
